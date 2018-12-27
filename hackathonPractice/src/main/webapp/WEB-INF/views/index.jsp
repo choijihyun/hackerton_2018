@@ -25,12 +25,12 @@
 </head>
 
 <body class="text-center">
-	<!-- Container -->
-	<div class="container m-0 p-0 justify-content-md-center justify-content-xs-center" >
+	<!-- 
+	<div class="container m-0 p-0 justify-content-md-center justify-content-xs-center" > -->
 		<div class="login_box">
 			<h1 class="text-center wdi_red">Login</h1>
 			<hr>
-				<div class="form-row" style="overflow-x:hidden; overflow-y:auto; width:auto; height:480px;">
+				<div class="form-row" style="overflow-x:hidden; overflow-y:auto; width:auto; height:350px;">
 					<!-- input id, pw -->
 					<div class="col-md-12 col-xs-12">
 						<input type="text" id="id"
@@ -41,25 +41,7 @@
 						<input type="password" id="pw"
 							class="form-control form-control-lg flat_input"
 							placeholder="password">
-					</div>
-					
-				<!-- 	
-					
-					<h6>Push 알림 메시지 입력</h6>
-					 
-					  <form action="/push_notification" method="post">
-					    <textarea name="message" rows="4" cols="10" placeholder="메세지를 입력하세요"></textarea><br>
-					    <input type="submit" name="submit" value="Send" id="submitButton">
-					</form>
-    
-     -->
-    
-					<!-- remember user infomation - checkbox -->
-					<div class="checkbox col-md-12">
-						<label> <input type="checkbox" value="remember-me"
-							id="idSaveCheck"> Remember me
-						</label>
-					</div>
+					</div>    
 
 					<!-- login/join/find pw button-->
 					<div class="col-md-12 col-xs-12">
@@ -77,8 +59,8 @@
 					</div>
 				</div>
 		</div>
-	</div>
-
+<!-- 	</div>
+ -->
 </body>
 </html>
 		
