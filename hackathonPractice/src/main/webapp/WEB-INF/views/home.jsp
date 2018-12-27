@@ -21,6 +21,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/simple-donut.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/simple-donut.sass">
+<script src="${pageContext.request.contextPath}/resources/js/simple-donut-jquery.js"></script>
+
 </head>
 
 <body class="text-center">
@@ -33,7 +38,19 @@
 
 	<!-- Page content -->
 	<div class="main">
-	  ...
+		<div id="demo" class="donut-size">
+	  		<div class="pie-wrapper">
+	   			<span class="label">
+	      			<span class="num">0</span><span class="smaller">%</span>
+	    		</span>
+	   		 <div class="pie">
+	      		<div class="left-side half-circle"></div>
+	 			<div class="right-side half-circle"></div>
+	   		</div>
+	    	<div class="shadow"></div>
+	  		</div>
+		</div>
+	
 	</div>
 </body>
 </html>
@@ -43,25 +60,7 @@
 
 
 <script type="text/javascript">	
-	
-		//시간표 불러오기
-		$.ajax({
-			url:"/timeTable/searchTimeTable.json",
-			type : "GET",
-			data : {
-				<%-- 'stuId' :<%=id%> --%>
-			}, success : function(result){
-	   			if(result['result'] === "no data"){ 
-	   				
-	   			}else{ 
-				
-					
-	   			}
-	 		}, error : function(request,status,error){
-				//alert('시간표 불러오기 에러');
-				console.log("code:"+request.status+'\n'+'message:'+request.responseText+'\n'+'error:'+error);
-			}
-		});//ajax
-	});//$(document).ready
+
+	updateDonutChart('#demo', 13, true);
 
 </script>
