@@ -36,11 +36,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-//C:\Users\은숙\.m2\repository
-//라이브러리 모음집
-//라이브러리들 가져오는거? 안되면 이 경로로 들어가서 안에있는 라이브러리들 다 지우고 다시 해보면 됨!
-
-//외부(안드로이드)에서 유저 정보를 url로 요청하면 이리로 오게 된다! 
 @Controller
 public class UserController {
 	
