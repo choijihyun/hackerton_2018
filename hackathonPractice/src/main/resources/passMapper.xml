@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+ 
+ <!-- sql 덩어리!!  dao들에서 얘네를 사용 --> <!-- 이거는 무슨 말인지 알았어요! -->
+<mapper namespace="PassDao">
+	<insert id="insertPass" parameterType="map">
+    	insert into Pass(year,orderExam,cutLine,passNum,examNum) values ( #{year},#{orderExam},#{cutLine},#{passNum},#{examNum})
+    </insert>
+       
+    <select id="getPass" resultType="com.homeworkNotice.dto.PassDto" parameterType="map">
+    	select auto,year,orderExam,cutLine,passNum,examNum from Pass where orderExam=(select Max(orderExam) from Pass where examNum=#{examNum})
+    </select> 
+     <select id="getOrderExam" resultType="com.homeworkNotice.dto.PassDto" parameterType="map">
+    	select auto,year,orderExam,cutLine,passNum,examNum from Pass where orderExam=(select Max(orderExam)-1 from Pass where examNum=#{examNum})
+    </select> 
+    
+    
+</mapper>
