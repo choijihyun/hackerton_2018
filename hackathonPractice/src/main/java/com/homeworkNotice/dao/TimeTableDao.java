@@ -13,7 +13,6 @@ import com.homeworkNotice.dto.TimeTableDto;
 
 @Repository
 public class TimeTableDao {
-	
 	@Autowired
     private SqlSession sqlSession;    
 	public SqlSession getSqlSession() {
@@ -22,10 +21,13 @@ public class TimeTableDao {
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
+	
 	public int getNum(HashMap<Object, Object> param) {
-		return sqlSession.insert("TimeTableDao.getNum",param);		
+		System.out.println("param = "+param);
+		System.out.println("겨로가  : " + sqlSession.selectList("TimeTableDao.getNum",param).get(0)); 
+		return sqlSession.selectOne("TimeTableDao.getNum",param);		
 	}
 	public int getPassNum(HashMap<Object, Object> param) {
-		return sqlSession.delete("TimeTableDao.getPassNum",param);
+		return sqlSession.selectOne("TimeTableDao.getPassNum",param);
 	}
 }
