@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<typeAlias alias="team" type="com.homeworkNotice.dto.TeamDto"/>
 		<typeAlias alias="complete" type="com.homeworkNotice.dto.CompleteDto"/>
 		<typeAlias alias="blackboard" type="com.homeworkNotice.dto.BlackboardDto"/>
+		<typeAlias alias="student" type="com.homeworkNotice.dto.StudentDto"/>
 	</typeAliases>
 	
     <mappers>
@@ -22,6 +23,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         <mapper resource="teamMapper.xml"/>
         <mapper resource="completeMapper.xml"/>
         <mapper resource="blackboardMapper.xml"/>
+    	<mapper resource="studentMapper.xml"/>
+    
     </mappers >
 </configuration>
  
