@@ -24,20 +24,16 @@
 </head>
 
 <body class="text-center">
-	<div class="container-fluid">
-		   <!-- header (상단바) class="app-header" -->
-         <div id="header"></div>
-		<div class="row flex-xl-nowrap">
-		
-		
-			<!-- 왼쪽 바 -->
-			<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-			</div>
-			
-			<!-- 메인 부분 -->
-			<div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-			</div>
-		</div>
+	<div class="sidenav">
+	  <a href="#">About</a>
+	  <a href="#">Services</a>
+	  <a href="#">Clients</a>
+	  <a href="#">Contact</a>
+	</div>
+
+	<!-- Page content -->
+	<div class="main">
+	  ...
 	</div>
 </body>
 </html>
@@ -45,70 +41,21 @@
 <script src="${pageContext.request.contextPath}/resources/js/common/header.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/common/footer.js"></script>
 
-<script type="text/javascript">
-	var userInputId = getCookie("userInputId");
-	console.log(userInputId);
-	<%
-	System.out.println("home session : " + session.getAttribute("id"));
-	%>
-</script>
 
 <script type="text/javascript">	
-	<%
-	String id = (String) session.getAttribute("id");
-	%>
-	$(document).ready(function() {
-		//과제 불러오기
-		$.ajax({
-			url : "/homework/selectHomework.json",
-			type : "GET",
-			data : {
-			'stuId' :<%=id%>,
-			'select' : 0,
-			'order' : 0
-			}, 
-			success : function(result) {
-				if (result['result'] === 'no data') {
-					alert('등록된 과제 없음');
-				} else { 
-					console.log(result);
-				for (var i = 0; i < result['result'].length; i++) {
-					var assign_title = result['result'][i]['title'];
-					var assign_contents = result['result'][i]['contents'];
-					var str = '';
-					str += '<button type="button" '; 
-					str += 'class="btn btn-lg btn-block btn-outline-danger btn_preview">';
-					str += '<h6 id="assign'+ (i + 1) + 'Title" ';
-					str += '    onclick = "location.href=\"/assignment\";"      ';
-					str += 'style="cursor: pointer; font-weight: bold" class="mb-2">-'+ assign_title + '</h6>';
-					str += '<p6 id="assign'+ (i + 1) + 'Context">'+ assign_contents+ '</p6>';
-					str += '</button>';
-					$('.content_preview_assignment').append(str);
-					}
-				}
-			},
-			error : function(request,status,error){
-				alert('과제불러오기 에러');
-				console.log('message:'+request.responseText+'\n'+'error:'+error);
-			}
-		});//ajax
-		
+	
 		//시간표 불러오기
 		$.ajax({
 			url:"/timeTable/searchTimeTable.json",
 			type : "GET",
 			data : {
-				'stuId' :<%=id%>
+				<%-- 'stuId' :<%=id%> --%>
 			}, success : function(result){
 	   			if(result['result'] === "no data"){ 
-	   				//alert('등록된 시간표가 없습니다.');
+	   				
 	   			}else{ 
 				
-					for (var i = 0; i < result['result'].length; i++) {
-						var subjectKey = result['result'][i]['subjectKey'];
-						//subject 키로 과목정보들 찾아와서 색칠하기
-						findSubjectInfo(subjectKey);
-					}
+					
 	   			}
 	 		}, error : function(request,status,error){
 				//alert('시간표 불러오기 에러');
