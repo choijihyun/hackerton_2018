@@ -53,21 +53,25 @@ public class StudentController {
 		    }
 
 		    File destFile = new File("C:\\"+excelFile.getOriginalFilename());
-
+		    System.out.println(excelFile.getOriginalFilename());
+		    
 		    try{
 		      //내가 설정한 위치에 내가 올린 파일을 만들고
-		        excelFile.transferTo(destFile);
+		        //excelFile.transferTo(destFile);
+		        System.out.println("성공!!!!!!");
 
 		    }catch(Exception e){
 		        throw new RuntimeException(e.getMessage(),e);
+		    
 		    }
 
+		    System.out.println("요요요요요");
 		    ExcelReadOption excelReadOption = new ExcelReadOption();
 
 //			파일경로 추가
 	        excelReadOption.setFilePath(destFile.getAbsolutePath());
 //	      추출할 컬럼 명 추가
-	        excelReadOption.setOutputColumns("Department","UserID","Name","Total","문제1","문제2","문제3","문제4","문제5","문제6","문제7","문제8","문제9","문제10","문제11","문제12","문제13","문제14","문제15","문제16","문제17","문제18");
+	        excelReadOption.setOutputColumns("department","stuId","name","total","problem1","problem2","problem3","problem4","problem5","problem6","problem7","problem8","problem9","problem10","problem11","problem12","problem13","problem14","problem15","problem16","problem17","problem18");
 	        // 시작 행
 	        excelReadOption.setStartRow(2);
 
@@ -75,6 +79,7 @@ public class StudentController {
 
 	        HashMap<Object, Object> param=new HashMap<Object, Object>(); //각각의 id마다 hashmap 만들어주니까 생성을 해줌
 	    	param.put("excelContent", excelContent);
+	    	//System.out.println(param.get(department));
 	    	
 	        try {
 	      studentDao.insertExcel(param);
