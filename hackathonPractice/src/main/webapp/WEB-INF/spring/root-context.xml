@@ -66,5 +66,9 @@
 	<bean id="studentDao" class="com.homeworkNotice.dao.StudentDao">
 		<property name="sqlSession" ref="SqlSessionTemplate"></property>
 	</bean>
+	
+	<bean id="passDao" class="com.homeworkNotice.dao.PassDao">
+		<property name="sqlSession" ref="SqlSessionTemplate"></property>
+	</bean>
 
 </beans>

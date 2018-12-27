@@ -69,11 +69,11 @@ public class TimeTableController {
 		HashMap<Object, Object> param = new HashMap<Object, Object>();
 
 		param.put("department", department);
-
+		System.out.println(department);
 		int result = 0;
 		try {
 			result = timeTableDao.getNum(param);
-
+			System.out.println("result = "+result);
 		} catch (Exception e) {
 			e.printStackTrace();
 			// TODO: handle exception

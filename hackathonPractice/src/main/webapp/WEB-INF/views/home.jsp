@@ -22,6 +22,10 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/simple-donut.sass">
 <script src="${pageContext.request.contextPath}/resources/js/simple-donut-jquery.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/graphite.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 
 <body class="w3-content" style="max-width: 1200px">
 	<div>
@@ -258,13 +262,44 @@
 	updateDonutChart('#demo3', 58, true);
 	updateDonutChart('#demo4', 7, true);
 	
-/*     $('.bar-chart').cssCharts({type:"bar"}); */
+
+    //$('.bar-chart').cssCharts({type:"bar"});
        
    
 
 
 </script>
 
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		//과제 불러오기
+		var department="컴퓨터공학과";
+		var a,b,c,d;
+		alert(department);
+		$.ajax({
+			url : "/timeTable/getNum.json",
+			type : "GET",
+			data : {
+			'department' :department
+			}, 
+			success : function(result) {	
+				if (result['result'] === '0') {
+					alert('등록된 과제 없음');
+				} else { 
+					a=result['result'];
+					alert(a);
+					a=result;
+				}
+			},
+			error : function(request,status,error){
+				alert('과제불러오기 에러');
+				console.log('message:'+request.responseText+'\n'+'error:'+error);
+			}
+		});//ajax
+	});
+
+</script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(function() {
@@ -281,6 +316,7 @@
 		$('#logout').on('click', function() {
 			console.log("logout");
 		});
+
 	});
 </script>
 
@@ -313,7 +349,7 @@
 
 	// Click on the "Jeans" link on page load to open the accordion for demo purposes
 	document.getElementById("myBtn").click();
-	document.getElementById("myBtn1").click();
+	//document.getElementById("myBtn1").click();
 
 	// Open and close sidebar
 	function w3_open() {
