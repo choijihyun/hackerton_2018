@@ -9,11 +9,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style_home.css">
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/simple-donut.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/simple-donut.sass">
 <script src="${pageContext.request.contextPath}/resources/js/simple-donut-jquery.js"></script>
 
 <body class="w3-content" style="max-width:1200px">
+   
 <div>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
@@ -80,7 +85,7 @@
   <header class="w3-container w3-xlarge">
     <p class="w3-left">SW 역량 모니터링!</p>
     <p class="w3-right">
-    <a class="btn btn-default btn-log-out" aria-label="Left Align" onclick="location.href="/logout""></a>
+    <a class="btn btn-default btn-log-out" aria-label="Left Align"  onclick='location.href="/"'></a>
       <i class="fa fa-sign-out"></i>
      </a>
     </p>
@@ -104,8 +109,7 @@
 </div>
 </div>
 
-	<div>
-      <div id="demo" class="donut-size">
+    <div id="demo" class="donut-size">
            <div class="pie-wrapper">
                <span class="label">
                   <span class="num">0</span><span class="smaller">%</span>
@@ -117,10 +121,9 @@
           <div class="shadow"></div>
            </div>
       </div>
-   
-   </div>
 </body>
 </html>
+
 
 <script>
    updateDonutChart('#demo', 13, true);
