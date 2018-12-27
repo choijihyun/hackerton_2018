@@ -4,6 +4,11 @@
 .wdi_red{
 	color: #dd3247;
 }
+.main_border{
+	border: 1px solid black;
+	height:500px;
+	margin : 0;
+}
 .login_box{
 	background: #fff;
 	padding: 0px;
@@ -14,40 +19,17 @@
 .main_area{
 	margin-bottom: 5px;
 	margin-top: 5px;
-	background: #fff;
+	background: #fff;.wdi_red{
+	color: #4469d9;
 }
-/*로그아웃 버튼*/
-.btn_logout{
-	border: 0;
-	margin-left: 25px;
-	margin-top: 10px;
-	align-content: right;
-	background: #f9f9f9;
-	color: #6c757d;
-	max-width: 60px;
-	max-height: 30px;
-}
-/*로그아웃 버튼에 마우스 올릴 때*/
-.btn_logout:hover{
-	border-radius: 0;
-	background: transparent;
-	border: 1px solid #dd3247;
-	color: #dd3247;
-	max-width: 60px;
-	max-height: 30px;
-}
-.list-group-item{
-	border-radius: 0;
-	font-size: 12px;
-	font-weight: bold;
-	box-shadow: none;
-}
-.list-group-item:hover,.list-group-item:focus{
-	border-radius: 0;
-	font-size: 12px;
-	font-weight: bold;
-	box-shadow: none;
-	color: #dd3247;
+
+.login_box{
+	margin: 0 auto;
+	width : 500px;
+	height : 450px;
+	text-align: center;
+	padding: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
 }
 .user_icon{
 	font-size:40px; 

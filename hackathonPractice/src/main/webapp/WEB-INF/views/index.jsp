@@ -85,8 +85,14 @@
 				},
 				success : function(result) {
 					if (result.result === "1") {
-						
-						location.href = "/home";
+						if($('#id').val() == 'admin'){
+
+							location.href = "/mypage";
+						}
+						else{
+							location.href = "/home";
+							
+						}
 
 					}else{
 						alert('아이디나 비밀번호를 다시 확인해 주세요.');
