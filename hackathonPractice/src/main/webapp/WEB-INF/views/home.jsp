@@ -85,9 +85,9 @@
   <header class="w3-container w3-xlarge">
     <p class="w3-left">SW 역량 모니터링!</p>
     <p class="w3-right">
-    <a class="btn btn-default btn-log-out" aria-label="Left Align"  onclick='location.href="/"'></a>
+    <button class="btn btn-default btn-log-out" aria-label="Left Align"  onclick='location.href="/"'></a>
       <i class="fa fa-sign-out"></i>
-     </a>
+     </button>
     </p>
   </header>
 
@@ -127,6 +127,13 @@
 
 <script>
    updateDonutChart('#demo', 13, true);
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#logout').on('click', function() {
+			console.log("logout");
+		});
+	});
 </script>
    
 <script>
