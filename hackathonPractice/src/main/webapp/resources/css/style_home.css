@@ -13,45 +13,19 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	background: #4469d9;
 }
 
-input[id="cb1"]:checked + label {
-	background-color: #666666;
+
+label{
+	background-color: none;
 }
 button {
 	border :0;
 	outline :0;
 	background-color: #ffffff;
 }
-/*로그아웃 버튼*/
-.btn_logout{
-	border: 0;
-	margin-left: 25px;
-	margin-top: 10px;
-	align-content: right;
-	background: #f9f9f9;
-	color: #6c757d;
-	max-width: 60px;
-	max-height: 30px;
-}
-/*로그아웃 버튼에 마우스 올릴 때*/
-.btn_logout:hover{
-	border-radius: 0;
-	background: transparent;
-	border: 1px solid #dd3247;
-	color: #dd3247;
-	max-width: 60px;
-	max-height: 30px;
-}
+
 .btn_preivew{
 	overflow:hidden;
 }
-/*과제 보여주는 작은 영역*/
-.content_preview_assignment{
-	border:1;
-	background: #fff;
-	margin-top: 10px;
-	color : #6c757d;
-}
-
 
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -66,7 +40,7 @@ button {
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav input {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
@@ -74,10 +48,6 @@ button {
   display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
 
 /* Style page content */
 .main {
