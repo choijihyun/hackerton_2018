@@ -4,10 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style_home.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/style_home.css">
 
  <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -26,6 +30,7 @@
 	<div>
 		<!-- Sidebar/menu -->
 		<nav class="w3-sidebar w3-bar-block w3-collapse w3-top"
+
 			style="z-index: 3; width: 250px" id="mySidebar">
 			<div class="w3-container w3-display-container w3-padding-16">
 				<i onclick="w3_close()"
@@ -33,6 +38,11 @@
 				<h3 class="w3-wide">
 					<b>SEJONG UNIV.</b>
 				</h3>
+				<%
+					String name = (String) session.getAttribute("name");
+				%>
+				<h5><%=name%>님 환영합니다.
+				</h5>
 			</div>
 			<div class="w3-padding-64 w3-large w3-text-grey"
 				style="font-weight: bold">
@@ -84,8 +94,7 @@
 			style="cursor: pointer" title="close side menu" id="myOverlay"></div>
 
 		<!-- !PAGE CONTENT! -->
-		<div class="w3-main w3-container" style="margin-left: 250px">
-
+		<div class="w3-main" style="margin-left: 250px">
 			<!-- Push down content on small screens -->
 			<div class="w3-hide-large" style="margin-top: 83px"></div>
 
@@ -94,7 +103,7 @@
 				<p class="w3-left">SW 역량 모니터링!</p>
 				<p class="w3-right">
 					<button class="btn btn-default btn-log-out" aria-label="Left Align"
-						onclick='location.href="/"'>
+						onclick='location.href="/logout"'>
 						</a> <i class="fa fa-sign-out"></i>
 					</button>
 				</p>
@@ -211,7 +220,6 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>
 
@@ -222,10 +230,23 @@
 	updateDonutChart('#demo2', 13, true);
 	updateDonutChart('#demo3', 58, true);
 	updateDonutChart('#demo4', 7, true);
+
 </script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
+		$(function() {
+			var i;
+			for(i=1;i<5;i++){
+				var chk = "#cb"+i;
+				var ch = "#cb0"+i;
+				
+				$(chk).attr("checked", true);
+				$(ch).attr("checked", true);
+			}
+			
+		});
+		
 		$('#logout').on('click', function() {
 			console.log("logout");
 		});
@@ -253,6 +274,7 @@
 
 	// Click on the "Jeans" link on page load to open the accordion for demo purposes
 	document.getElementById("myBtn").click();
+	document.getElementById("myBtn1").click();
 
 	// Open and close sidebar
 	function w3_open() {

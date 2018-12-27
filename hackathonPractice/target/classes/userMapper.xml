@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	select * from User
     </select>    
     <select id="selectUser" resultType="com.homeworkNotice.dto.UserDto" parameterType="map">
-    	select pw from User where id = #{id}
+    	select pw, name from User where id = #{id}
     </select>    
     <select id="pushUser" resultType="com.homeworkNotice.dto.UserDto" parameterType="map">
     	select stuId,token from Student where stuId = #{stuId}
@@ -44,19 +44,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select> 
    
     
-    <!--
-        로그인된 경우 해당 세션id와 유효시간을 사용자 테이블에 세팅한다. 이 밑에가 지현이가 코딩한부분
-     -->
-    <update id="keepLogin">
-        update Student set sessionkey = #{sessionId}, sessionlimit = #{next} where stuId=#{stuId}
-    </update>
-   
-    <select id="checkUserWithSessionKey" resultType="com.homeworkNotice.dto.UserDto">
-        select * from Student where sessionkey = #{sessionId} and sessionlimit > now()
-    </select>
-    
-     <update id="checkbox" parameterType="map">
-    	update Student set useCookie=#{check} where stuId=#{stuId}
-    </update>
 
 </mapper>

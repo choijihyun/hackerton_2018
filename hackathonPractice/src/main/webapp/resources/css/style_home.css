@@ -14,45 +14,40 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 /*상단,하단 바 제외한 가운데 영역*/
 
 
-input[id="cb1"]:checked + label {
-	background-color: #666666;
+
+label{
+	background-color: none;
 }
 button {
 	border :0;
 	outline :0;
 	background-color: #ffffff;
 }
-/*로그아웃 버튼*/
-.btn_logout{
-	border: 0;
-	margin-left: 25px;
-	margin-top: 10px;
-	align-content: right;
-	background: #f9f9f9;
-	color: #6c757d;
-	max-width: 60px;
-	max-height: 30px;
-}
-/*로그아웃 버튼에 마우스 올릴 때*/
-.btn_logout:hover{
-	border-radius: 0;
-	background: transparent;
-	border: 1px solid #dd3247;
-	color: #dd3247;
-	max-width: 60px;
-	max-height: 30px;
-}
+
 .btn_preivew{
 	overflow:hidden;
 }
-/*과제 보여주는 작은 영역*/
-.content_preview_assignment{
-	border:1;
-	background: #fff;
-	margin-top: 10px;
-	color : #6c757d;
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
 }
 
+/* The navigation menu links */
+.sidenav input {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
 
 /* Style page content */
 .main {
