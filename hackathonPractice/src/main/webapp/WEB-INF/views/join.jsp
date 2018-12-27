@@ -22,9 +22,6 @@
 </head>
 
 <body class="text-center">
-	<!-- Container -->
-	<div
-		class="container m-0 p-0 justify-content-md-center justify-content-xs-center" id="content">
 		<div class="login_box ">
 			<h1 class="text-center wdi_red">JOIN</h1>
 			<hr>
@@ -58,41 +55,19 @@
 							title="NAME" id="name">
 					</div>
 
-					<div class="col-md-3 col-xs-3 label_input">
-						<h6>EMAIL</h6>
-					</div>
-					<div class="col-md-9 col-xs-9">
-						<input type="text" class="form-control form-control-lg flat_input"
-							title="EMAIL" id="email">
-					</div>
-
-					<!--GRADE lable/Dropdow tag -->
-					<div class="col-md-3 col-xs-3 label_input">
-						<h6>YEAR</h6>
-					</div>
-					<div class="container col-md-3 col-xs-3 dropdown_semester">
-						<select class="form-control" id="semester">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-						</select>
-					</div>
-					<div class="col-md-6 col-xs-6"></div>
-
 					<!--join/cancel button -->
 					<div class="col-md-6 col-xs-6 btns">
-						<button class="btn btn-sm btn-block btn_join" id="btnJoin">
+						<button type="button" class="btn btn-sm btn-block btn_join" id="btnJoin">
 							JOIN</button>
 					</div>
 					<div class="col-md-6 col-xs-6 btns">
-						<button type="button" class="btn btn-sm btn-block btn_cancel"
-							onclick='location.href="/"'>CANCEL</button>
+						<button type="button" class="btn btn-sm btn-block btn_cancel" 
+						onclick='location.href="/"'>
+							CANCEL</button>
 					</div>
 
 				</div>
 		</div>
-	</div>
 </body>
 </html>
 
@@ -113,9 +88,7 @@
 					data : {
 						'stuId':$('#id').val(),
 						'pw':$('#pw').val(),
-						'name':$('#name').val(),
-						'semester':$('#semester').val(),
-						'email':$('#email').val()
+						'name':$('#name').val()
 					},
 					success : function(result){
 						console.log(result);

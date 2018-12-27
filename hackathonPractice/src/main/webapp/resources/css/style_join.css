@@ -1,24 +1,25 @@
-.container{
-	max-width : none;
-}
 .wdi_red{
-	color: #dd3247;
+	color: #4469d9;
 }
+
 .login_box{
-	background: #fff;
-	padding: 50px;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	margin: 0 auto;
+	width : 500px;
+	height : 450px;
+	text-align: center;
+	padding: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); 
 }
 /*input 영역*/
 .flat_input{
 	margin-top: 20px;
 	border: none;
 	border-radius: 0;
-	border-bottom: 1px solid #dd3247;
+	border-bottom: 1px solid #4469d9;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
-	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 96%, #dd3247 4%);
-	background: linear-gradient(to bottom , rgba(255,255,255,0) 96%, #dd3247 4%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 96%, #4469d9 4%);
+	background: linear-gradient(to bottom , rgba(255,255,255,0) 96%, #4469d9 4%);
 	background-position: -500px 0;
 	background-size: 100% 100%;
 	background-repeat: no-repeat; 
@@ -28,17 +29,18 @@
 	box-shadow: none;
 	outline: none;
 	background-position: 0 0;
-	border-bottom: 1px solid #dd3247;
+	border-bottom: 1px solid #4469d9;
 }
 /*input영역 옆에 label*/
 .label_input{
 	margin-top: 35px;
-	color: #dd3247;
+	color: #4469d9;
 }
 /*가입 완료 버튼*/
 .btn_join {
+	margin-top : 50px;
 	border-radius: 0;
-	background: #dd3247;
+	background: #4469d9;
 	color: #fff;
 	-webkit-transition: all 0.8s;
 	transition: all 0.8s;
@@ -46,13 +48,15 @@
 }
 /*가입 완료 버튼 클릭 했을 때*/
 .btn_join:hover{
+	margin-top : 50px;
 	background: transparent;
-	border: 1px solid #dd3247;
-	color: #dd3247;
+	border: 1px solid #4469d9;
+	color: #4469d9;
 	 outline: none;
 }
 /*가입 취소 버튼*/
 .btn_cancel {
+	margin-top : 50px;
 	border-radius: 0;
 	background: gray;
 	color: #fff;
@@ -62,6 +66,7 @@
 }
 /*가입 취소 버튼 클릭 했을 때*/
 .btn_cancel:hover{
+	margin-top : 50px;
 	background: transparent;
 	border: 1px solid gray;
 	color: gray;
@@ -75,7 +80,7 @@
 	align-content: left;
 	font-size: 13px;
 	background: #fff;
-	color: #dd3247;
-	border: 1px solid #dd3247;
+	color: #4469d9;
+	border: 1px solid #4469d9;
 	outline: none;
 }
