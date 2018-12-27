@@ -23,9 +23,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	select * from Student where stuId=#{stuId}
     </select> 
    <insert id="insertExcel" parameterType="map">
-    	insert into Student(department,stuId,name,total,problem1,problem2,problem3,problem4,problem5,problem6,problem7,problem8,problem9,problem10,problem11,problem12,problem13,problem14,problem15,problem16,problem17,problem18) values
+    	insert into Student(department,stuId,name,total,problem1,problem2,problem3,problem4,problem5,problem6,problem7,problem8,problem9,problem10,problem11,problem12) values
     	<foreach collection="excelContent" item="item" separator=",">
-    		(#{item.department},#{item.stuId},#{item.total},#{item.problem1},#{item.problem2},#{item.problem3},#{item.problem4},#{item.problem5},#{item.problem6},#{item.problem7},#{item.problem8},#{item.problem9},#{item.problem10},#{item.problem11},#{item.problem12},#{item.problem13},#{item.problem14},#{item.problem15},#{item.problem16},#{item.problem17},#{item.problem18})
+    		(#{item.department},#{item.stuId},#{item.name},#{item.total},#{item.problem1},#{item.problem2},#{item.problem3},#{item.problem4},#{item.problem5},#{item.problem6},#{item.problem7},#{item.problem8},#{item.problem9},#{item.problem10},#{item.problem11},#{item.problem12})
     	</foreach> 
     </insert>
     <update id="updatePw">

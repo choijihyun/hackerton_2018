@@ -71,12 +71,12 @@ public class StudentController {
 //			파일경로 추가
 	        excelReadOption.setFilePath(destFile.getAbsolutePath());
 //	      추출할 컬럼 명 추가
-	        excelReadOption.setOutputColumns("department","stuId","name","total","problem1","problem2","problem3","problem4","problem5","problem6","problem7","problem8","problem9","problem10","problem11","problem12","problem13","problem14","problem15","problem16","problem17","problem18");
+	        excelReadOption.setOutputColumns("department","stuId","name","total","problem1","problem2","problem3","problem4","problem5","problem6","problem7","problem8","problem9","problem10","problem11","problem12");
 	        // 시작 행
 	        excelReadOption.setStartRow(2);
 
 	        List<Map<String, String>>excelContent = ExcelRead.read(excelReadOption);
-
+	        System.out.println(excelContent);
 	        HashMap<Object, Object> param=new HashMap<Object, Object>(); //각각의 id마다 hashmap 만들어주니까 생성을 해줌
 	    	param.put("excelContent", excelContent);
 	    	//System.out.println(param.get(department));
