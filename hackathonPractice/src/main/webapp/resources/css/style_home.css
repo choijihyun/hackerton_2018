@@ -6,7 +6,8 @@
 	padding: 0px;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 /*상단,하단 바 제외한 가운데 영역*/
 .main_area{
 	background: #4469d9;
