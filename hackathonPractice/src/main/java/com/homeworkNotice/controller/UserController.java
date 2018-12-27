@@ -46,7 +46,7 @@ public class UserController {
   private CompleteDao completeDao;
   private TimeTableDao timeTableDao;
   private HomeworkDao homeworkDao;
-  
+  	
   //앞으로 많을 요청 중 하나의 함수
   //안드로이드에서 비밀번호를 달라고 요청하는 함수.
 	@ResponseBody
@@ -57,7 +57,7 @@ public class UserController {
     			@RequestParam(value = "stuId", required=true) String stuId,
     			@RequestParam(value = "email", required=true) String email) {//안드로이드에서 받을 파라미터, 사실 요거 하나만 받음 댐
 		// ?id=1 이런식으로 치면 1에 해당하는 password가 나오는 함수인데 여기에서 @RequestParam 부분은 id라는 거를 받아줄 통? 을 만들었다고 보면 됨
-		
+		//ddd
 		HashMap<Object, Object> param=new HashMap<Object, Object>();// 이부분은 잘 모르겠어요!!!!!!!!!!!!!!!!!!!!!!!!!
 		//xml의 sql에서 필요로 하는 정보가 있다면 여기에 담아서 전달해줌. 이 함수에선 id겠지?(밑에 보이는)
 
