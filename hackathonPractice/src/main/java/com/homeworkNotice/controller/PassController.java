@@ -1,5 +1,4 @@
 package com.homeworkNotice.controller;
-package com.homeworkNotice.controller;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -38,7 +37,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 @Controller
-public class StudentController {
+public class PassController {
 	
 	//싱글톤으로 떠도는 userDao를 잡아옴
  @Autowired //만약에 따로 정해진 id 가 있으면 autowired 아니라 다른거로 ㅎㅎㅎㅎ;;

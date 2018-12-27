@@ -55,7 +55,6 @@ public class ExcelRead {
 	       * 워크북에서 가져온 시트에서 rowIndex에 해당하는 Row를 가져온다. 하나의 Row는 여러개의 Cell을 가진다.
 	       */
 	      row = sheet.getRow(rowIndex);
-
 	      if (row != null) {
 	        /*
 	         * 가져온 Row의 Cell의 개수를 구한다.
@@ -73,29 +72,25 @@ public class ExcelRead {
 	           * Row에서 CellIndex에 해당하는 Cell을 가져온다.
 	           */
 	          cell = row.getCell(cellIndex);
-	          System.out.println(cell+"!!!!");
-	          
 	          /*
 	           * 현재 Cell의 이름을 가져온다 이름의 예 : A,B,C,D,......
 	           */
 	          cellName = ExcelCellRef.getName(cell, cellIndex);
-	          System.out.println(cell+"@@@@");
-	          
 	          /*
 	           * 추출 대상 컬럼인지 확인한다 추출 대상 컬럼이 아니라면, for로 다시 올라간다
 	           */
-	          if (!excelReadOption.getOutputColumns().contains(cellName)) {
-	            continue;
-	          }
+	          
 	          /*
 	           * map객체의 Cell의 이름을 키(Key)로 데이터를 담는다.
 	           */
-	          map.put(cellName, ExcelCellRef.getValue(cell));
+	          System.out.println("##############"+map.get(0));
+	          map.put(cellName, cell.toString());
 	        }
 	        /*
 	         * 만들어진 Map객체를 List로 넣는다.
 	         */
 	        result.add(map);
+	        System.out.println(result);
 	      }
 	    }
 	    return result;
