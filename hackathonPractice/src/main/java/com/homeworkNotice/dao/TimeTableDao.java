@@ -22,20 +22,10 @@ public class TimeTableDao {
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-
-	public int insertTimeTable(HashMap<Object, Object> param) {
-		return sqlSession.insert("TimeTableDao.insertTimeTable",param);		
+	public int getNum(HashMap<Object, Object> param) {
+		return sqlSession.insert("TimeTableDao.getNum",param);		
 	}
-	
-	public List<TimeTableDto> searchTimeTable(HashMap<Object,Object> param) {
-		return sqlSession.selectList("TimeTableDao.searchTimeTable", param);
-	}
-
-	public int deleteTimeTable(HashMap<Object, Object> param) {
-		return sqlSession.delete("TimeTableDao.deleteTimeTable",param);
-	}
-	
-	public int deleteAllTimeTable(HashMap<Object, Object> param) {
-		return sqlSession.delete("TimeTableDao.deleteAllTimeTable",param);
+	public int getPassNum(HashMap<Object, Object> param) {
+		return sqlSession.delete("TimeTableDao.getPassNum",param);
 	}
 }
