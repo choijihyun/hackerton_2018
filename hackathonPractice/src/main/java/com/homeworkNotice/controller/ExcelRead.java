@@ -20,7 +20,8 @@ public class ExcelRead {
 	    // 엑셀 파일 자체
 	    // 엑셀파일을 읽어 들인다.
 	    // FileType.getWorkbook() <-- 파일의 확장자에 따라서 적절하게 가져온다.
-	    Workbook wb = ExcelFileType.getWorkbook(excelReadOption.getFilePath());
+		Workbook wb=null;
+	    wb = ExcelFileType.getWorkbook(excelReadOption.getFilePath());
 
 	    //	엑셀 파일에서 첫번째 시트를 가지고 온다.
 	    Sheet sheet = wb.getSheetAt(0);
@@ -30,6 +31,7 @@ public class ExcelRead {
 
 	    // sheet에서 유효한(데이터가 있는) 행의 개수를 가져온다.
 	    int numOfRows = sheet.getPhysicalNumberOfRows();
+	    System.out.println(numOfRows);
 	    int numOfCells = 0;
 
 	    Row row = null;
@@ -83,14 +85,14 @@ public class ExcelRead {
 	          /*
 	           * map객체의 Cell의 이름을 키(Key)로 데이터를 담는다.
 	           */
-	          System.out.println("##############"+map.get(0));
+	          //System.out.println("##############"+map.get(0));
 	          map.put(cellName, cell.toString());
 	        }
 	        /*
 	         * 만들어진 Map객체를 List로 넣는다.
 	         */
 	        result.add(map);
-	        System.out.println(result);
+	        //System.out.println(result);
 	      }
 	    }
 	    return result;
