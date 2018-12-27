@@ -22,17 +22,35 @@
       학과 <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button"></a>
+          <input type="checkbox" id="cb1">
+    <label for="cb1">컴퓨터공학과</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb2">
+    <label for="cb2">소프트웨어학과</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb3">
+    <label for="cb3">지능기전</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb4">
+    <label for="cb4">정보보호학과</label>
     </div>
         <a onclick="myAccFunc1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       학년 <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button"></a>
+          <input type="checkbox" id="cb01">
+    <label for="cb1">1</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb02">
+    <label for="cb1">2</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb03">
+    <label for="cb1">3</label>
+      <a href="#" class="w3-bar-item w3-button"></a>
+       <input type="checkbox" id="cb04">
+    <label for="cb1">4</label>
     </div>
   </div>
   
@@ -55,7 +73,7 @@
   
   <!-- Top header -->
   <header class="w3-container w3-xlarge">
-    <p class="w3-left">SW 역량 모니터링</p>
+    <p class="w3-left">SW 역량 모니터링!</p>
     <p class="w3-right">
     <a class="btn btn-default btn-log-out" aria-label="Left Align" onclick="location.href="/logout""></a>
       <i class="fa fa-sign-out"></i>
