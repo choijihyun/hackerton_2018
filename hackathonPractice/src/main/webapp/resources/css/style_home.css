@@ -12,6 +12,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 .main_area{
 	background: #4469d9;
 }
+
+input[id="cb1"]:checked + label {
+	background-color: #666666;
+}
 /*로그아웃 버튼*/
 .btn_logout{
 	border: 0;
