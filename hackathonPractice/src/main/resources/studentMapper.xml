@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    <insert id="insertExcel" parameterType="map">
     	insert into Student(department,stuId,name,total,problem1,problem2,problem3,problem4,problem5,problem6,problem7,problem8,problem9,problem10,problem11,problem12) values
     	<foreach collection="excelContent" item="item" separator=",">
-    		(#{item.A},#{item.B},#{item.C},#{item.D},#{item.E},#{item.F},#{item.G},#{item.H},#{item.I},#{item.J},#{item.K},#{item.L},#{item.M},#{item.N},#{item.O},#{item.P})
+  		(#{item.A},#{item.B},#{item.C},#{item.D},#{item.E},#{item.F},#{item.G},#{item.H},#{item.I},#{item.J},#{item.K},#{item.L},#{item.M},#{item.N},#{item.O},#{item.P})
     	</foreach> 
     </insert>
     <update id="updatePw">

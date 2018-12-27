@@ -30,6 +30,7 @@ public class ExcelReadOption {
 	    public void setOutputColumns(List<String> outputColumns) {
 
 	  //    	이걸 A,B,C,D 이런 식으로 추가하던데
+	    	
 	        List<String> temp = new ArrayList<String>();
 	        temp.addAll(outputColumns);
 

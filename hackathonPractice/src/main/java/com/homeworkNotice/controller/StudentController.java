@@ -22,6 +22,15 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
+import com.homeworkNotice.controller.ExcelReadOption;
+import com.homeworkNotice.controller.ExcelCellRef;
+import com.homeworkNotice.controller.ExcelFileType;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
 import com.homeworkNotice.dao.UserDao;
 import com.homeworkNotice.dto.UserDto;
 import com.homeworkNotice.dao.StudentDao;
@@ -52,12 +61,12 @@ public class StudentController {
 		        throw new RuntimeException("엑셀파일을 선택 해 주세요.");
 		    }
 
-		    File destFile = new File("C:\\"+excelFile.getOriginalFilename());
+		    File destFile = new File("C:\\Users\\은숙\\Desktop\\"+excelFile.getOriginalFilename());
 		    System.out.println(excelFile.getOriginalFilename());
 		    
 		    try{
 		      //내가 설정한 위치에 내가 올린 파일을 만들고
-		        //excelFile.transferTo(destFile);
+		        excelFile.transferTo(destFile);
 		        System.out.println("성공!!!!!!");
 
 		    }catch(Exception e){
@@ -77,9 +86,9 @@ public class StudentController {
 
 	        List<Map<String, String>>excelContent = ExcelRead.read(excelReadOption);
 	        System.out.println(excelContent);
-	        HashMap<Object, Object> param=new HashMap<Object, Object>(); //각각의 id마다 hashmap 만들어주니까 생성을 해줌
+	        
+	        HashMap<String, Object> param=new HashMap<String, Object>(); //각각의 id마다 hashmap 만들어주니까 생성을 해줌
 	    	param.put("excelContent", excelContent);
-	    	//System.out.println(param.get(department));
 	    	
 	        try {
 	      studentDao.insertExcel(param);

@@ -6,7 +6,6 @@
  * @param  {boolean} donut   True shows donut, false shows pie
  */
 function updateDonutChart (el, percent, donut) {
-	console.log("12333/////"+percent);
     percent = Math.round(percent);
     if (percent > 100) {
         percent = 100;

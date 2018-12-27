@@ -74,12 +74,10 @@ public class ExcelRead {
 	           * Row에서 CellIndex에 해당하는 Cell을 가져온다.
 	           */
 	          cell = row.getCell(cellIndex);
-	          //System.out.println(cell.toString());
 	          /*
 	           * 현재 Cell의 이름을 가져온다 이름의 예 : A,B,C,D,......
 	           */
 	          cellName = ExcelCellRef.getName(cell, cellIndex);
-	          //System.out.println(cellName);
 	          /*
 	           * 추출 대상 컬럼인지 확인한다 추출 대상 컬럼이 아니라면, for로 다시 올라간다
 	           */
