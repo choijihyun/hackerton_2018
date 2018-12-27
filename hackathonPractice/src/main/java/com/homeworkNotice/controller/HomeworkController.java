@@ -313,7 +313,7 @@ public class HomeworkController {
 	        	long n1,n2;
 	        	long calc1,calc2;
 	        	double sav1=0,sav2=0,temp=0;
-	        	/*
+	        	
 	        	if(order==0) {
 		        	for(int i=0;i<jsonList.size();i++){
 		        		for(int k=0;k<jsonList.size()-1;k++) {
@@ -384,7 +384,7 @@ public class HomeworkController {
 		        		}
 		        	}	
 	        	}
-	        	*/
+	        	
 	        	for(int i=0;i<jsonList.size();i++) {
 	        		jSONArray.add(jsonList.get(i));
 	        	}	        	

@@ -3,7 +3,6 @@
 <!doctype html>
 <html lang="kr">
 <head>
-
 <title>HOME</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -25,42 +24,26 @@
 </head>
 
 <body class="text-center">
-	<!-- Container -->
-	<div class="container m-0 p-0 justify-content-md-center justify-content-xs-center">
-		<div class="login_box ">
+	<div class="container-fluid">
+		   <!-- header (상단바) class="app-header" -->
+         <div id="header"></div>
+		<div class="row flex-xl-nowrap">
 		
-			<!-- header (상단바) class="app-header" -->
-			<div id="header"></div>
-			
-			<!-- 상단바와 하단바를 제외한 부분 class="main-area" -->
-			<div class="jumbotron p-md-0 text-white main_area  p-0">
-				<div style="cursor: pointer; height: auto;"
-					onclick="location.href='/timetable_page';"
-					class="scrollbar scrollbar_track scrollbar_thumb" data-spy="scroll"
-					data-offset="0">
-					<div id="timetable"></div>
-				</div>
-
-				<!-- 등록된 과제를 보여주는 scroll창 -->
-				<div style="overflow-x:hidden; overflow-y:auto; width:auto; height:130px;"
-					class="mt-3 content_preview_assignment scrollbar scrollbar_track scrollbar_thumb"
-					data-spy="scroll" data-offset="0"></div>
-
+		
+			<!-- 왼쪽 바 -->
+			<div class="col-12 col-md-3 col-xl-2 bd-sidebar">
 			</div>
-
-			<!-- footer 하단바 class="app-footer" -->
-			<div id="footer"></div>
-
+			
+			<!-- 메인 부분 -->
+			<div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+			</div>
 		</div>
 	</div>
 </body>
 </html>
 
 <script src="${pageContext.request.contextPath}/resources/js/common/header.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/common/timetable.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/common/footer.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/common/func_cookie.js"></script>
-<script src="${pageContext.request.contextPath}/resources/js/common/func_timetable.js"></script>
 
 <script type="text/javascript">
 	var userInputId = getCookie("userInputId");
