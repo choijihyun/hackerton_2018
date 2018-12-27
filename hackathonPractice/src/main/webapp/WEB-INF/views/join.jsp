@@ -86,7 +86,7 @@
 					url:"/user/insertUser.json",
 					type : "GET",
 					data : {
-						'stuId':$('#id').val(),
+						'id':$('#id').val(),
 						'pw':$('#pw').val(),
 						'name':$('#name').val()
 					},
@@ -100,9 +100,11 @@
 		            	alert('회원가입 실패');
 		            }
 		        },
-		        error : function(){
-		        	alert('회원가입 에러');
-		        }
+		        error:function(request,status,error){
+		            alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	            	alert('회원가입 에러');
+		           }
+
 		    });
 		});
 	});

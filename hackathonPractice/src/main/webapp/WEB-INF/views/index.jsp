@@ -69,57 +69,8 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$.ajax({
-			url : "/user/preHandle.json",
-			method : "POST"
-		});
-		
-<%
-			int FF=0;
-			System.out.println("index session : " + session.getAttribute("id"));
-			if(session.getAttribute("id")!=null){
-				FF=1;
-				String id = (String)session.getAttribute("id");
-				String pw = (String)session.getAttribute("pw");
-				String check = (String)session.getAttribute("check");
-				System.out.println("id, pw, checkbox : "+id+pw+check);
-				if(FF == 1){
-%>
-				
-				if(<%=check%>=="1"){
-					$("#idSaveCheck").attr('checked', true) ;
-					$('#id').val(<%=id%>);
-					//$('#pw').val(<%=pw%>);
-				}
-<%		
-				}
-			}
-%>
-				
-<!--
-		$("#idSaveCheck").change(function() {
-			flag=0;
-			if ($("#idSaveCheck").is(":checked")) {
-				console.log("check in remember me");
-				flag=1;
-				//setCookie("userInputId", userInputId, 7); 
-			} else {
-				console.log("no check");
-				flag=0;
-			}
 
-			if ($('#id').val() != "") {
-				$.ajax({
-					url :"/user/checkbox.json",
-					type : "GET",
-					data :{
-						"stuId" : $('#id').val(),
-						"select" : flag
-					}					
-				});
-			}
-		});
-		-->
+	
  		$('#submit').on('click', function() {
 
 			//setCookie("userInputId", userInputId, 7); // 7일 동안 쿠키 보관
@@ -129,7 +80,7 @@
 				url : "/user/checkUser.json",
 				method : "post",
 				data : {
-					'stuId' : $('#id').val(),
+					'id' : $('#id').val(),
 					'pw' : $('#pw').val()
 				},
 				success : function(result) {
@@ -146,28 +97,6 @@
 				}
 			});
 			
-			
-			flag=0;
-			if ($("#idSaveCheck").is(":checked")) {
-				//alert("check in remember me");
-				flag=1;
-				//setCookie("userInputId", userInputId, 7); 
-			} else {
-				//alert("no check");
-				flag=0;
-			}
-
-			if ($('#id').val() != "") {
-				event.preventDefault();
-				$.ajax({
-					url :"/user/checkbox.json",
-					type : "GET",
-					data :{
-						"stuId" : $('#id').val(),
-						"select" : flag
-					}					
-				});
-			}
 		}); 
 	});
 </script>
