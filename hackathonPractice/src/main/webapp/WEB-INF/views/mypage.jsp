@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style_mypage.css">
 
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
  <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -65,21 +67,27 @@
 			<div class="w3-hide-large" style="margin-top: 83px"></div>
 
 			<!-- Top header -->
-			<header class="w3-container w3-xlarge">
-				<p class="w3-left col-auto" style="font-size: 30px;">SW 역량 모니터링</p>
+			<header class="w3-container w3-xlarge mt-2">
+				<p class="w3-left col-auto" style="font-family: 'Roboto', sans-serif; font-size: 30px;"></p>
 				<p class="w3-right">
 					<button class="btn btn-default btn-log-out" aria-label="Left Align"
 						onclick='location.href="/logout"'>
-						</a> <i class="fa fa-sign-out"></i>
+						</a> <i class="fa fa-sign-out-alt"></i>
 					</button>
 				</p>
 			</header>
 			<div class="row main_area">
 				<div class="main_border col-5 p-1">
-				
+				 <button type="button" class="btn fa fa-file-excel px-4" style="outline:none; height:380px; font-size: 300px; color: #1abc9c;"
+				 onclick='location.href="/insert"'></button>
+				 <div class="p-4" style="font-size: 20px;font-weight: bold;"> EXCEL 파일 올리기 </div>
+				 
 				</div>
-				<div class="main_border col-5 p-1">
-				</div>
+				 <div class="main_border col-5 p-1">
+				<button type="button" class="btn fa fa-chart-bar px-4" style="outline:none; height:380px; font-size: 300px; color: #1abc9c;"
+				 onclick='location.href="/home"'></button>
+				 <div class="p-4" style="font-size: 20px;font-weight: bold;"> 자료 열람하기 </div>
+				</div> 
 			</div>
 
 				

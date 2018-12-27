@@ -107,8 +107,8 @@
 			<div class="w3-hide-large" style="margin-top: 83px"></div>
 
 			<!-- Top header -->
-			<header class="w3-container w3-xlarge">
-				<p class="w3-left col-auto" style="font-size: 30px;">SW 역량 모니터링</p>
+			<header class="w3-container w3-xlarge mt-2">
+				<p class="w3-left col-auto" style="font-family: 'Roboto', sans-serif; font-size: 30px;">SW 역량 모니터링</p>
 				<p class="w3-right">
 					<button class="btn btn-default btn-log-out" aria-label="Left Align"
 						onclick='location.href="/logout"'>
@@ -258,7 +258,7 @@
 	updateDonutChart('#demo3', 58, true);
 	updateDonutChart('#demo4', 7, true);
 	
-    $('.bar-chart').cssCharts({type:"bar"});
+/*     $('.bar-chart').cssCharts({type:"bar"}); */
        
    
 
