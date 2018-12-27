@@ -20,7 +20,7 @@ public class StudentDao {
 		this.sqlSession = sqlSession;
 	}
 	
-	public int insertExcel(HashMap<Object, Object> param) {
+	public int insertExcel(HashMap<String, Object> param) {
 		return sqlSession.insert("StudentDao.insertExcel", param);		
 	}
 	
