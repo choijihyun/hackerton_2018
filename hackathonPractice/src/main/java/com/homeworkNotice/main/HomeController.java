@@ -137,6 +137,11 @@ public class HomeController {
         return "changePW";
     }
     
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public String insert(Locale locale, Model model) {
+       System.out.println("insert!");
+        return "insert";
+    }
     @RequestMapping(value = "/find_subject", method = RequestMethod.GET)
     public String find_subject(Locale locale, Model model,
     		@RequestParam(value="page", required=false) String page,
