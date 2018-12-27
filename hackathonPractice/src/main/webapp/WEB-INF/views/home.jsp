@@ -25,6 +25,10 @@
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
     <h3 class="w3-wide"><b>SEJONG UNIV.</b></h3>
+    <%
+		String name = (String) session.getAttribute("name");
+	%>
+    <h5><%=name%>님 환영합니다.</h5>
   </div>
   <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
     <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
@@ -85,7 +89,7 @@
   <header class="w3-container w3-xlarge">
     <p class="w3-left">SW 역량 모니터링!</p>
     <p class="w3-right">
-    <button class="btn btn-default btn-log-out" aria-label="Left Align"  onclick='location.href="/"'></a>
+    <button class="btn btn-default btn-log-out" aria-label="Left Align"  onclick='location.href="/logout"'></a>
       <i class="fa fa-sign-out"></i>
      </button>
     </p>

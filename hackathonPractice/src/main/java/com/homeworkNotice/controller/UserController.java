@@ -83,6 +83,7 @@ public class UserController {
 	//이거는 처음 로그인 할때만 쓰는 controller
 	@RequestMapping(value = "/user/checkUser.json", produces="application/json;text/plain;charset=UTF-8", method = RequestMethod.POST)//요 부분이 url //get방식으로 저 /user/getUserPwdInfo.json이라는 url로 들어와서 값을 확인 할 수 있다.
 	public @ResponseBody String checkUser(//url에 맵핑(연결)된 함수
+			HttpSession session,
 			Locale locale, //안드로이드에서 받을 파라미터
 			Model model, //안드로이드에서 받을 파라미터
 			@RequestParam(value = "id", required=true) String id,
@@ -103,7 +104,8 @@ public class UserController {
 		if(!userDtoList.isEmpty() && userDtoList.size()==1) {//반환받은 데이터가 유효하면(db에 있으면) 브라우저 화면에 결과를 뿌려준다
 			if(pw.equals(userDtoList.get(0).getPw())) {
 				jSONObject.put("result","1");//id도 존재하고 비번도 맞는 경우
-				
+				String name = userDtoList.get(0).getName();
+				session.setAttribute("name", name);
 			}
 		}
 		else {//없으면 에러라고 브라우저에 뿌려준다
