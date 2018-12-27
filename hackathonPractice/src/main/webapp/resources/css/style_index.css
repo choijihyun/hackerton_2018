@@ -2,7 +2,7 @@
 	max-width : none;
 }
 .wdi_red{
-	color: #dd3247;
+	color: #4469d9;
 }
 
 .login_box{
@@ -34,7 +34,7 @@
 /*로그인 버튼*/
 .btn_login{
 	border-radius: 0;
-	background: #dd3247;
+	background: #4469d9;
 	color: #fff;
 	-webkit-transition: all 0.8s;
 	transition: all 0.8s;
