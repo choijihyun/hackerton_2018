@@ -71,7 +71,7 @@ public class StudentController {
 //			파일경로 추가
 	        excelReadOption.setFilePath(destFile.getAbsolutePath());
 //	      추출할 컬럼 명 추가
-	        excelReadOption.setOutputColumns("department","stuId","name","total","problem1","problem2","problem3","problem4","problem5","problem6","problem7","problem8","problem9","problem10","problem11","problem12");
+	        excelReadOption.setOutputColumns("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P");
 	        // 시작 행
 	        excelReadOption.setStartRow(2);
 
