@@ -74,4 +74,12 @@ public class UserDao {
 	public int checkbox(HashMap<Object,Object> param) {
 		return sqlSession.update("UserDao.checkbox",param);
 	}
+	
+	public List<UserDto> getNum(HashMap<Object, Object> param) {
+		System.out.println("param = "+param);
+		return sqlSession.selectList("UserDao.getNum",param);		
+	}
+	public List<UserDto> getPassNum(HashMap<Object, Object> param) {
+		return sqlSession.selectList("UserDao.getPassNum",param);
+	}
 }

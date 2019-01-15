@@ -43,6 +43,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	select useCookie from Student where stuId = #{stuId}
     </select> 
    
+    	<select id="getNum" resultType="com.homeworkNotice.dto.UserDto" parameterType="map">
+    	select count(*) from Student where department=#{department}
+    </select>
     
+    <select id="getPassNum" resultType="com.homeworkNotice.dto.UserDto" parameterType="map">
+    	select count(*) from Student where department=#{department} and total>#{total}
+    </select>
 
 </mapper>

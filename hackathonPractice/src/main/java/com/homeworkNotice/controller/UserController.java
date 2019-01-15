@@ -230,7 +230,58 @@ public class UserController {
 	    	return jSONObject.toString();
 		}
 		*/
-			
+	@ResponseBody
+	@RequestMapping(value = "/user/getPassNum", produces = "application/json;text/plain;charset=UTF-8", method = RequestMethod.GET)
+	public String getPassNum(Locale locale, Model model,
+			@RequestParam(value = "department", required = true) String department,
+			@RequestParam(value = "total", required = true) String total) {
+		HashMap<Object, Object> param = new HashMap<Object, Object>();
+		int i = Integer.parseInt(total) + 1;
+		i*=13;
+		param.put("department", department);
+		param.put("total", i);
+
+		
+		List<UserDto> userDtoList=userDao.getPassNum(param);
+		JSONObject jSONObject = new JSONObject();
+    	if(!userDtoList.isEmpty() && userDtoList.get(0).getEmail().equals(email)) {//반환받은 데이터가 유효하면(db에 있으면) 브라우저 화면에 결과를 뿌려준다
+        	jSONObject.put("pw", userDtoList.get(0).getPw()); 
+        	//여기도 궁금!!!! 그 userDtoList.get(0)은 뭘 의미하는거에영???
+        	//db에서 받은 리스트들 중 첫번째 인덱스를 가져오는거야 (근데 사실 id로 가져오면 항상 1개밖에 없긴함;;;ㅎㅎ)
+    	}
+    	else {//없으면 에러라고 브라우저에 뿌려준다
+    		jSONObject.put("result", "no data");
+    	}
+    	System.out.println(jSONObject.toString());
+    	return jSONObject.toString();//요청한 내용들을 반환해준다.
+    }
+
+	
+
+	@ResponseBody
+	@RequestMapping(value = "/user/getNum", produces = "application/json;text/plain;charset=UTF-8", method = RequestMethod.GET)
+	public String getNum(Locale locale, Model model,
+			@RequestParam(value = "department", required = true) String department) {
+
+		HashMap<Object, Object> param = new HashMap<Object, Object>();
+
+		param.put("department", department);
+
+		List<UserDto> userDtoList=userDao.getNum(param);
+		JSONObject jSONObject = new JSONObject();
+    	if(!userDtoList.isEmpty() && userDtoList.get(0).getEmail().equals(email)) {//반환받은 데이터가 유효하면(db에 있으면) 브라우저 화면에 결과를 뿌려준다
+        	jSONObject.put("pw", userDtoList.get(0).getPw()); 
+        	//여기도 궁금!!!! 그 userDtoList.get(0)은 뭘 의미하는거에영???
+        	//db에서 받은 리스트들 중 첫번째 인덱스를 가져오는거야 (근데 사실 id로 가져오면 항상 1개밖에 없긴함;;;ㅎㅎ)
+    	}
+    	else {//없으면 에러라고 브라우저에 뿌려준다
+    		jSONObject.put("result", "no data");
+    	}
+    	System.out.println(jSONObject.toString());
+    	return jSONObject.toString();//요청한 내용들을 반환해준다.
+    }
+	}
+
 	
 		
 }

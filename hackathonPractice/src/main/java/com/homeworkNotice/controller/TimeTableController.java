@@ -23,6 +23,7 @@ import com.homeworkNotice.dto.SubjectDto;
 import com.homeworkNotice.dao.UserDao;
 import com.homeworkNotice.dao.TimeTableDao;
 import com.homeworkNotice.dto.TimeTableDto;
+import com.homeworkNotice.dto.UserDto;
 
 @Controller
 public class TimeTableController {
@@ -36,9 +37,13 @@ public class TimeTableController {
 			@RequestParam(value = "department", required = true) String department,
 			@RequestParam(value = "total", required = true) String total) {
 		HashMap<Object, Object> param = new HashMap<Object, Object>();
+		int i = Integer.parseInt(total) + 1;
+		i*=13;
 		param.put("department", department);
-		param.put("total", total);
+		param.put("total", i);
 
+		
+		List<UserDto> userDtoList=timetableDao.getNum(param);
 		int result = 0;
 		try {
 			result = timeTableDao.getPassNum(param);
@@ -69,16 +74,9 @@ public class TimeTableController {
 		HashMap<Object, Object> param = new HashMap<Object, Object>();
 
 		param.put("department", department);
-		System.out.println(department);
-		int result = 0;
-		try {
-			result = timeTableDao.getNum(param);
-			System.out.println("result = "+result);
-		} catch (Exception e) {
-			e.printStackTrace();
-			// TODO: handle exception
-		}
 
+		List<UserDto> timeTableDtoList=TimeTableDto.getNum(param);
+		
 		System.out.println(result);
 		JSONObject jSONObject = new JSONObject();
 

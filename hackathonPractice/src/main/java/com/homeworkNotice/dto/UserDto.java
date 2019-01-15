@@ -30,19 +30,6 @@ public class UserDto {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	/*
-	public String getSessionKey() {
-		return sessionkey;
-	}
-	public void setSessionKey(String sessionkey) {
-		this.sessionkey = sessionkey;
-	}
 	
-	public String getSessionLimit() {
-		return sessionlimit;
-	}
-	public void setSessionLimit(String sessionlimit) {
-		this.sessionlimit = sessionlimit;
-	}*/
 	
 }
